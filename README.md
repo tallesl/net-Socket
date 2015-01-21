@@ -1,3 +1,9 @@
+<p align="center">
+    <a href="#socketthat">
+        <img alt="logo" src="logo.png">
+    </a>
+</p>
+
 # SocketThat
 
 [![nuget package](https://badge.fury.io/nu/SocketThat.png)](http://badge.fury.io/nu/SocketThat)
