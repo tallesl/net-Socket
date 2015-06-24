@@ -8,9 +8,14 @@
 
 [![nuget package](https://badge.fury.io/nu/SocketThat.png)](http://badge.fury.io/nu/SocketThat)
 
-A minimalist wrapper around .NET's [Socket](http://msdn.microsoft.com/library/system.net.sockets.socket).
+A minimalist wrapper around a .NET's [Stream][Stream] [IPv4][IPv4] [TCP][TCP] [Socket][Socket].
 
-[Stream](http://msdn.microsoft.com/library/system.net.sockets.addressfamily) [IPv4](http://msdn.microsoft.com/library/system.net.sockets.sockettype) [TCP](http://msdn.microsoft.com/library/system.net.sockets.protocoltype) socket. Everything is synchronous.
+Everything is synchronous.
+
+[Stream]: http://msdn.microsoft.com/library/system.net.sockets.addressfamily
+[IPv4]:   http://msdn.microsoft.com/library/system.net.sockets.sockettype
+[TCP]:    http://msdn.microsoft.com/library/system.net.sockets.protocoltype
+[Socket]: http://msdn.microsoft.com/library/system.net.sockets.socket
 
 ## An stupid echo server
 
@@ -28,7 +33,7 @@ using (var listener = new SocketListener(1337)) // Start listening
 }
 ```
 
-## It's client
+## And its client
 
 ```cs
 using (var socket = new ConnectedSocket("127.0.0.1", 1337)) // Connects to 127.0.0.1 on port 1337
@@ -37,7 +42,3 @@ using (var socket = new ConnectedSocket("127.0.0.1", 1337)) // Connects to 127.0
     var data = socket.Receive(); // Receives some data back (blocks execution)
 }
 ```
-
-## .NET version
-
-4
