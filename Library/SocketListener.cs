@@ -1,9 +1,9 @@
-﻿using System;
-using System.Net;
-using System.Net.Sockets;
-
-namespace SocketThat
+﻿namespace SocketLibrary
 {
+    using System;
+    using System.Net;
+    using System.Net.Sockets;
+
     /// <summary>
     /// An IPv4 TCP socket listener.
     /// </summary>
@@ -17,7 +17,7 @@ namespace SocketThat
         /// <param name="backlog">Number of incoming connections that can be queued for acceptance</param>
         /// <exception cref="ArgumentException">ip contains Unicode characters.</exception>
         /// <exception cref="ArgumentException">ip is null.</exception>
-        /// <exception cref=""FormatException>ip is not a valid IP address</exception>
+        /// <exception cref="FormatException">ip is not a valid IP address</exception>
         /// <exception cref="SocketException">An error occurred when attempting to access the socket.</exception>
         public SocketListener(int port, string ip = "127.0.0.1", int backlog = 10)
         {

@@ -1,23 +1,29 @@
 <p align="center">
-    <a href="#socketthat">
-        <img alt="logo" src="logo.png">
+    <a href="#socket">
+        <img alt="logo" src="Asset/logo.png">
     </a>
 </p>
 
-# SocketThat
+# Socket
 
-[![nuget package](https://badge.fury.io/nu/SocketThat.png)](http://badge.fury.io/nu/SocketThat)
+[![][build-img]][build]
+[![][nuget-img]][nuget]
 
-A minimalist wrapper around a .NET's [Stream][Stream] [IPv4][IPv4] [TCP][TCP] [Socket][Socket].
-
+A minimalist wrapper around a .NET's [Stream]&nbsp;[IPv4]&nbsp;[TCP]&nbsp;[Socket].
 Everything is synchronous.
 
-[Stream]: http://msdn.microsoft.com/library/system.net.sockets.addressfamily
-[IPv4]:   http://msdn.microsoft.com/library/system.net.sockets.sockettype
-[TCP]:    http://msdn.microsoft.com/library/system.net.sockets.protocoltype
-[Socket]: http://msdn.microsoft.com/library/system.net.sockets.socket
+[build]:     https://ci.appveyor.com/project/TallesL/net-socket
+[build-img]: https://ci.appveyor.com/api/projects/status/github/tallesl/net-socket?svg=true
+[nuget]:     https://www.nuget.org/packages/Socket
+[nuget-img]: https://badge.fury.io/nu/Socket.svg
+[Stream]:    http://msdn.microsoft.com/library/System.Net.Sockets.AddressFamily
+[IPv4]:      http://msdn.microsoft.com/library/System.Net.Sockets.SocketType
+[TCP]:       http://msdn.microsoft.com/library/System.Net.Sockets.ProtocolType
+[Socket]:    http://msdn.microsoft.com/library/System.Net.Sockets.Socket
 
-## An stupid echo server
+## Usage
+
+An stupid echo server:
 
 ```cs
 using (var listener = new SocketListener(1337)) // Start listening
@@ -33,7 +39,7 @@ using (var listener = new SocketListener(1337)) // Start listening
 }
 ```
 
-## And its client
+And its client:
 
 ```cs
 using (var socket = new ConnectedSocket("127.0.0.1", 1337)) // Connects to 127.0.0.1 on port 1337

@@ -1,9 +1,9 @@
-﻿using System;
-using System.Net.Sockets;
-using System.Text;
-
-namespace SocketThat
+﻿namespace SocketLibrary
 {
+    using System;
+    using System.Net.Sockets;
+    using System.Text;
+
     /// <summary>
     /// An IPv4 TCP connected socket.
     /// </summary>
