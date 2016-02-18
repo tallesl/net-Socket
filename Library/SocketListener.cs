@@ -1,14 +1,20 @@
 ﻿namespace SocketLibrary
 {
     using System;
+    using System.Diagnostics.CodeAnalysis;
     using System.Net;
     using System.Net.Sockets;
 
     /// <summary>
     /// An IPv4 TCP socket listener.
     /// </summary>
-    public class SocketListener : IDisposable
+    public sealed class SocketListener : IDisposable
     {
+        /// <summary>
+        /// The underlying socket.
+        /// </summary>
+        private readonly Socket _socket;
+
         /// <summary>
         /// Constructs and listens in the given port.
         /// </summary>
@@ -35,11 +41,6 @@
             _socket.Bind(endpoint);
             _socket.Listen(backlog);
         }
-
-        /// <summary>
-        /// The underlying socket.
-        /// </summary>
-        private readonly Socket _socket;
 
         /// <summary>
         /// Accepts a connection.

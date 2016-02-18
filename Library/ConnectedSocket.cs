@@ -1,15 +1,25 @@
 ﻿namespace SocketLibrary
 {
     using System;
-using System.Net;
-using System.Net.Sockets;
-using System.Text;
+    using System.Net;
+    using System.Net.Sockets;
+    using System.Text;
 
     /// <summary>
     /// An IPv4 TCP connected socket.
     /// </summary>
-    public class ConnectedSocket : IDisposable
+    public sealed class ConnectedSocket : IDisposable
     {
+        /// <summary>
+        /// Encoding of the content sended and received
+        /// </summary>
+        private readonly Encoding _encoding;
+
+        /// <summary>
+        /// The underlying socket.
+        /// </summary>
+        private readonly Socket _socket;
+
         /// <summary>
         /// Constructs and connects the socket.
         /// </summary>
@@ -58,16 +68,6 @@ using System.Text;
             _encoding = Encoding.UTF8;
             _socket = socket;
         }
-
-        /// <summary>
-        /// Encoding of the content sended and received
-        /// </summary>
-        private readonly Encoding _encoding;
-
-        /// <summary>
-        /// The underlying socket.
-        /// </summary>
-        private readonly Socket _socket;
 
         /// <summary>
         /// True if there's any data to receive on the socket.
