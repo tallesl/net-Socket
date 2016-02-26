@@ -1,6 +1,6 @@
 <p align="center">
     <a href="#socket">
-        <img alt="logo" src="Asset/logo.png">
+        <img alt="logo" src="Assets/logo.png">
     </a>
 </p>
 
