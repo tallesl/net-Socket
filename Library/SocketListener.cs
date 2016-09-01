@@ -10,9 +10,6 @@
     /// </summary>
     public sealed class SocketListener : IDisposable
     {
-        /// <summary>
-        /// The underlying socket.
-        /// </summary>
         private readonly Socket _socket;
 
         /// <summary>
@@ -40,6 +37,17 @@
             _socket = new Socket(AddressFamily.InterNetwork, SocketType.Stream, ProtocolType.Tcp);
             _socket.Bind(endpoint);
             _socket.Listen(backlog);
+        }
+
+        /// <summary>
+        /// The underlying socket.
+        /// </summary>
+        public Socket UnderlyingSocket
+        {
+            get
+            {
+                return _socket;
+            }
         }
 
         /// <summary>

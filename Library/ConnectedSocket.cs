@@ -10,14 +10,8 @@
     /// </summary>
     public sealed class ConnectedSocket : IDisposable
     {
-        /// <summary>
-        /// Encoding of the content sended and received
-        /// </summary>
         private readonly Encoding _encoding;
 
-        /// <summary>
-        /// The underlying socket.
-        /// </summary>
         private readonly Socket _socket;
 
         /// <summary>
@@ -30,7 +24,6 @@
         /// Constructs and connects the socket.
         /// </summary>
         /// <param name="endpoint">Endpoint to connect to</param>
-        /// <param name="port">Port to connect to</param>
         /// <param name="encoding">Encoding of the content sended and received by the socket</param>
         public ConnectedSocket(EndPoint endpoint, Encoding encoding)
         {
@@ -59,10 +52,6 @@
             _socket.Connect(host, port);
         }
 
-        /// <summary>
-        /// Ctor.
-        /// </summary>
-        /// <param name="socket">Socket to be wrapped</param>
         internal ConnectedSocket(Socket socket)
         {
             _encoding = Encoding.UTF8;
@@ -77,6 +66,17 @@
             get
             {
                 return _socket.Available > 0;
+            }
+        }
+
+        /// <summary>
+        /// The underlying socket.
+        /// </summary>
+        public Socket UnderlyingSocket
+        {
+            get
+            {
+                return _socket;
             }
         }
 
