@@ -12,6 +12,8 @@
 A minimalist wrapper around a .NET's [Stream]&nbsp;[IPv4]&nbsp;[TCP]&nbsp;[Socket].
 Everything is synchronous.
 
+**Disclaimer**: I've used this library only on prototypes and small use cases, it never reached production. Even though the code is fairly small, consider that while using it.
+
 [build]:     https://ci.appveyor.com/project/TallesL/net-socket
 [build-img]: https://ci.appveyor.com/api/projects/status/github/tallesl/net-socket?svg=true
 [nuget]:     https://www.nuget.org/packages/Socket
